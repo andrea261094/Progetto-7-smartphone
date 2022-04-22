@@ -50,7 +50,7 @@ interface Smartphone {
      public getNumeroChiamate():number{
          return this.numerochiamate;
      }
-  
+   
      //Implemetazione METODO azzera Chiamate
      public azzeraChiamate():void{
          this.numerochiamate=0;
