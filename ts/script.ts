@@ -1,11 +1,11 @@
-// Interfaccia smartphone
+
 interface Smartphone {
 
-    // 1. Inserire proprietà interfaccia
+    
      credito: number;
      numerochiamate: number;
   
-     // 2. Dichiarare i metodi
+     
      ricarica(credito: number, unaRicarica: number): void;
      chiamata(credito: number, minutiRicarica: number): void;
      numero404(): number;
@@ -14,14 +14,14 @@ interface Smartphone {
   }
   
   
-  // 3. CLASSE FirstUser implementa Smartphone 
+  
   class FirstUser implements Smartphone {
   
-     // Modificatori di accesso sulle proprietà - > ridichiarare le proprietà dell'interfaccia (definendo le pubblic)
+     
      public numerochiamate: number;
      public credito: number;
   
-     // Dichiarazione del Costruttore 
+     
      constructor(_credito: number, _numerochiamate:  number) { 
          this.credito = _credito;
          this.numerochiamate = _numerochiamate;
@@ -29,38 +29,35 @@ interface Smartphone {
   
   
   
-     // Implementazione METODO ricarica -> metodo che agisce-> ricarica(number credito, double unaRicarica)
+     
      public ricarica( unaRicarica: number):void {
          this.credito += unaRicarica;
      }
   
-     // Implementazione METODO chiamata come paramentro i minuti -> credito sarà decrementato 0.20 al minuto -> chiamata(number credito, double minutiDurata)
+     
      public chiamata( minutiDurata: number):void {
          let tariffa = 0.20;
          this.credito= this.credito-(tariffa * minutiDurata);
          this.numerochiamate++;
      }
   
-     // Implematazione METODO numero 404 (return) ->  restituisce il valore della carica disponibile. 
+     
      public numero404():number{
          return this.credito;
      }
   
-     // Implemetazione METODO getNumeroCHiamate (return)
      public getNumeroChiamate():number{
          return this.numerochiamate;
      }
    
-     //Implemetazione METODO azzera Chiamate
+     
      public azzeraChiamate():void{
          this.numerochiamate=0;
      }
   }
   
   
-  // 4. Implemetazione della classe -> Saranno le classi a definire i metodi
   
-  //Classe "SecondUser"
   class SecondUser implements Smartphone {
      credito: number;
      numerochiamate: number;
@@ -89,7 +86,7 @@ interface Smartphone {
   }
   
   
-  //Classe "ThirdUser"
+  
   class ThirdUser implements Smartphone {
      credito: number;
      numerochiamate: number;
@@ -120,7 +117,6 @@ interface Smartphone {
   
   
   
-  // 5. Utilizzo dei METODI per effettuare DUE ricariche e DUE chiamate (quanti minuti dura la chiamata)
   let smartphone1 = new FirstUser(2, 2);
   smartphone1.ricarica(10);
   smartphone1.chiamata(5);
@@ -135,7 +131,7 @@ interface Smartphone {
   
   
   
-  // 6. console.log():
+  // . console.log():
   
      //'primo utente'
      console.log("---PRIMO UTENTE---")
@@ -153,7 +149,7 @@ interface Smartphone {
   
   
   
-     //seconda classe e terza classe sono IDENTICHE alla prima (second user) -> copia/incolla cambiando il nome della classe e il nome della Variabile che implementa la classe
+     
   
      // Secondo utente 
      console.log("---SECONDO UTENTE---")
